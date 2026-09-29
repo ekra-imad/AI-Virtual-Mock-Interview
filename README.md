@@ -105,7 +105,7 @@ Open the frontend folder using VS Code and launch via Live Server (http://127.0.
 
 ---
 
-** Future Improvements**
+**Future Improvements**
 * Voice-based interview support & Speech-to-text integration
 * AI-generated dynamic question banks
 * Facial expression analysis
