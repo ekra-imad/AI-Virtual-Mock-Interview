@@ -54,7 +54,7 @@ During development, systematic troubleshooting and documentation protocols were 
 ---
 
 ##  Project Structure
-
+``` text
 AI-Virtual-Mock-Interview
 │
 ├── database
@@ -74,7 +74,7 @@ AI-Virtual-Mock-Interview
 ├── documentation
 │
 └── postman
-
+``` 
 ---
 
 ## Core API Endpoints
