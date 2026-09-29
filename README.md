@@ -1,64 +1,60 @@
 # AI-Based Virtual Mock Interview Platform
 
-## Overview
+A full-stack, data-driven web application developed as a final-year academic project to automate technical interview evaluations using Spring Boot, Flask, MySQL, and Natural Language Processing (NLP).
 
-The AI-Based Virtual Mock Interview Platform is a web application developed as a final-year academic project. The purpose of this project is to help students practice technical interviews by providing role-based interview questions and automatically evaluating their answers using Natural Language Processing (NLP).
-
-Instead of manually checking every response, the system compares the user's answer with an ideal answer using the TF-IDF Vectorization and Cosine Similarity algorithm. Based on the similarity score, the system provides feedback that helps the user understand how well their answer matches the expected response.
-
-The project follows a simple client-server architecture using Spring Boot for the backend, Flask for the NLP service, MySQL for data storage, and HTML, CSS, Bootstrap, and JavaScript for the frontend.
-
----
-
-## Features
-
-- User Registration and Login
-- Role-based interview selection
-- Multiple interview domains
-  - Java Developer
-  - Frontend Developer
-  - Data Scientist
-- Automatic answer evaluation using NLP
-- Similarity score generation
-- Feedback for every answer
-- Interview result summary
-- Interview history
-- REST API based backend
-- MySQL database integration
+##  Project Team & Contributions
+* **Ekra Imad** (Lead - Database Integrity, Backend Data Workflows, & Documentation)
+* *[Collaborator Name 1]* (Frontend & UI Development)
+* *[Collaborator Name 2]* (Spring Boot & Flask NLP Service Integration)
 
 ---
 
-## Technology Stack
+##  Project Overview
+This platform automates technical interview preparation by comparing user responses against ideal answers using **TF-IDF Vectorization and Cosine Similarity** algorithms. 
 
-### Frontend
-- HTML5
-- CSS3
-- Bootstrap 5
-- Vanilla JavaScript (ES6)
-
-### Backend
-- Java 17
-- Spring Boot
-- Spring MVC
-- Spring Data JPA
-- Hibernate
-- Maven
-
-### NLP Service
-- Python
-- Flask
-- Scikit-learn
-- TF-IDF Vectorizer
-- Cosine Similarity
-
-### Database
-- MySQL
+While the system evaluates responses via NLP, my primary focus on this project centered on **relational database architecture, data integrity verification, API data flow, and structured workflow documentation** to ensure seamless operational tracking and zero data loss across interview sessions.
 
 ---
 
-## Project Structure
+##  System Navigation & Workflow Guide
+To maintain clear process standards and tracking across user lifecycles, the end-to-end data flow operates through structured navigation points:
 
-```
+1. **Authentication & Session Initiation:** User logs in (`POST /api/auth/login`), creating an active interview session logged in MySQL.
+2. **Role & Question Retrieval:** The system fetches role-based question banks (`GET /api/roles`) with strict parameter filtering.
+3. **Response Processing & Evaluation:** User submits an answer (`POST /api/interview/answer`). Spring Boot routes the payload to the Flask NLP microservice.
+4. **Data Storage & Audit Logging:** TF-IDF similarity scores and feedback metadata are securely committed to the database, ensuring complete historical tracking (`GET /api/history/{userId}`).
+
+---
+
+##  Database Architecture & Data Integrity
+The application relies on a fully normalized MySQL relational database designed to guarantee strict data consistency and reliable audit trails:
+
+* **Core Tables:** `users`, `roles`, `questions`, `interview_sessions`, and `answer_evaluations`.
+* **Constraint Management:** Implemented Primary Keys (PK) and Foreign Keys (FK) to maintain strict cross-table relational mapping.
+* **Data Verification:** Managed dataset integrity checks to prevent orphaned evaluation records and handle missing response edge cases cleanly.
+
+---
+
+##  Investigation, Troubleshooting & Workflow Documentation
+During development, systematic troubleshooting and documentation protocols were applied to handle runtime discrepancies:
+
+* **API Payload Validation:** Investigated data mismatch issues between the Spring Boot backend and Flask NLP service by tracing JSON payload structures and HTTP status codes.
+* **Query Performance & Error Tracking:** Analyzed database execution logs for session-fetching queries to eliminate latency bottlenecks.
+* **Process Documentation:** Authored comprehensive documentation covering system navigation maps, database schema definitions, and API integration steps to ensure smooth team collaboration and project maintenance.
+
+---
+
+##  Technology Stack
+
+* **Frontend:** HTML5, CSS3, Bootstrap 5, Vanilla JavaScript (ES6)
+* **Backend:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, Hibernate, Maven
+* **NLP Microservice:** Python, Flask, Scikit-learn, TF-IDF Vectorizer, Cosine Similarity
+* **Database & Tools:** MySQL, Postman, Git/GitHub, Documentation
+
+---
+
+##  Project Structure
+
 AI-Virtual-Mock-Interview
 │
 ├── database
@@ -78,115 +74,39 @@ AI-Virtual-Mock-Interview
 ├── documentation
 │
 └── postman
-```
 
 ---
 
-## System Workflow
-
-1. User registers or logs in.
-2. User selects an interview role.
-3. The backend creates an interview session.
-4. Questions are fetched from the database.
-5. The user submits an answer.
-6. Spring Boot sends the answer and ideal answer to the Flask NLP service.
-7. Flask calculates the similarity score using TF-IDF and Cosine Similarity.
-8. The score and feedback are stored in MySQL.
-9. After completing the interview, the user can view the overall result and interview history.
-
----
-
-## Database Tables
-
-The application uses the following tables:
-
-- users
-- roles
-- questions
-- interview_sessions
-- answer_evaluations
-
----
-
-## API Endpoints
-
-### Authentication
-
-- POST `/api/auth/register`
-- POST `/api/auth/login`
-
-### Roles
-
-- GET `/api/roles`
-
-### Interview
-
-- POST `/api/interview/start`
-- POST `/api/interview/answer`
-
-### Results
-
-- GET `/api/result/{sessionId}`
-- GET `/api/history/{userId}`
+## Core API Endpoints
+* **Authentication:** POST /api/auth/register, POST /api/auth/login
+* **Roles & Setup:** GET /api/roles, POST /api/interview/start
+* **Evaluation Pipeline:** POST /api/interview/answer
+* **History & Reporting:** GET /api/result/{sessionId}, GET /api/history/{userId}
 
 ---
 
 ## How to Run the Project
+**1. Start MySQL -** Create the database and import the SQL schema files located in the database folder.
 
-### 1. Start MySQL
-
-Create the database and import the SQL files from the `database` folder.
-
----
-
-### 2. Start the Flask NLP Service
-
-```bash
+**2. Start the Flask NLP Service**
+Bash
 cd flask-backend
 python app.py
+(Service runs on http://localhost:5000)
 
-
-The Flask service will run on:
-
-```
-http://localhost:5000
-```
-
----
-
-### 3. Start the Spring Boot Backend
-
-```bash
+**3. Start the Spring Boot Backend**
+Bash
 cd spring-backend
 mvn spring-boot:run
+(Backend runs on http://localhost:8080)
 
-The backend will run on:
-
-
-http://localhost:8080
-
+**4. Start the Frontend**
+Open the frontend folder using VS Code and launch via Live Server (http://127.0.0.1:5500).
 
 ---
 
-### 4. Start the Frontend
-
-Open the `frontend` folder using VS Code and start it using Live Server.
-
-The application will be available at:
-
-http://127.0.0.1:5500
-
----
-
-## Future Improvements
-
-Some features that can be added in future versions include:
-
-- Voice-based interview support
-- Speech-to-text integration
-- AI-generated interview questions
-- Facial expression analysis
-- JWT authentication
-- Cloud deployment
-- Performance analytics dashboard
-
+** Future Improvements**
+* Voice-based interview support & Speech-to-text integration
+* AI-generated dynamic question banks
+* Facial expression analysis
+* Cloud deployment and advanced performance analytics dashboard
