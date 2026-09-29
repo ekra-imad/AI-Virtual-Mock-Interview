@@ -4,8 +4,8 @@ A full-stack, data-driven web application developed as a final-year academic pro
 
 ##  Project Team & Contributions
 * **Ekra Imad** (Lead - Database Integrity, Backend Data Workflows, & Documentation)
-* *[Collaborator Name 1]* (Frontend & UI Development)
-* *[Collaborator Name 2]* (Spring Boot & Flask NLP Service Integration)
+* **Sanjana Jaiswal** (Frontend & UI Development)
+* **Ayesha Fatima** (Spring Boot & Flask NLP Service Integration)
 
 ---
 
