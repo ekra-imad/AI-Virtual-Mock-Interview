@@ -3,9 +3,9 @@
 A full-stack, data-driven web application developed as a final-year academic project to automate technical interview evaluations using Spring Boot, Flask, MySQL, and Natural Language Processing (NLP).
 
 ##  Project Team & Contributions
-* **Ekra Imad** (Lead - Database Integrity, Backend Data Workflows, & Documentation)
+* **Ekra Imad** (Lead - Database Integrity, Data Workflows, & Documentation)
 * **Sanjana Jaiswal** (Frontend & UI Development)
-* **Ayesha Fatima** (Spring Boot & Flask NLP Service Integration)
+* **Ayesha Fatima** (Spring Boot Backend & Flask NLP Service Integration)
 
 ---
 
@@ -47,9 +47,9 @@ During development, systematic troubleshooting and documentation protocols were 
 ##  Technology Stack
 
 * **Frontend:** HTML5, CSS3, Bootstrap 5, Vanilla JavaScript (ES6)
-* **Backend:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, Hibernate, Maven
+* **Backend:** Java 17, Spring Boot, Spring MVC, Spring Data JPA, Hibernate, Maven, Postman
 * **NLP Microservice:** Python, Flask, Scikit-learn, TF-IDF Vectorizer, Cosine Similarity
-* **Database & Tools:** MySQL, Postman, Git/GitHub, Documentation
+* **Database & Tools:** MySQL, Git/GitHub, Documentation
 
 ---
 
