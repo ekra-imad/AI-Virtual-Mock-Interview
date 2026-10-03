@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - AI Virtual Mock Interview</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <a href="dashboard.html" class="logo-container">
+      <div class="logo-icon">AI</div>
+      <span>MockInterview</span>
+    </a>
+    <nav>
+      <!-- Populated by utils.js -->
+    </nav>
+  </header>
+
+  <div class="container">
+    <div style="margin-bottom: 2rem;">
+      <h1 id="welcomeUser">Welcome back</h1>
+      <p class="subtitle">Select an interview role below to begin your technical assessment session.</p>
+    </div>
+
+    <h2>Available Roles</h2>
+    <div id="roleGrid" class="role-grid">
+      <!-- Populated dynamically by dashboard.js -->
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
