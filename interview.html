@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Session - AI Virtual Mock Interview</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <a href="dashboard.html" class="logo-container">
+      <div class="logo-icon">AI</div>
+      <span>MockInterview</span>
+    </a>
+    <nav>
+      <!-- Populated by utils.js -->
+    </nav>
+  </header>
+
+  <div class="container" style="max-width: 800px;">
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <div class="question-card">
+      <div class="question-header">
+        <span id="questionNumber" class="question-badge">Question 1</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">AI Evaluated Session</span>
+      </div>
+
+      <div id="questionText" class="question-text">
+        Loading question...
+      </div>
+
+      <div id="feedbackBox" class="feedback-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <strong>Evaluation Result</strong>
+          <span id="feedbackScore" style="font-weight: 700; color: var(--accent-blue); font-size: 1.1rem;">0%</span>
+        </div>
+        <p id="feedbackRemark" style="color: var(--text-muted); font-size: 0.95rem;">-</p>
+      </div>
+
+      <form id="answerForm">
+        <div class="form-group">
+          <label for="userAnswer">Your Answer</label>
+          <textarea id="userAnswer" required placeholder="Type your detailed technical response here..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn">Submit Answer</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/interview.js"></script>
+</body>
+</html>
